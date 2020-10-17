@@ -1,0 +1,19 @@
+Settings.AutoDetectKeyboardLayout = False
+attackToggle = Region(Region(686,946,87,89))
+targetCropse = Region(Region(1106,566,292,99))
+   
+while(True):
+    if attackToggle.exists(Pattern("1585832753926.png").similar(0.73)):
+        type(Key.TAB)
+        while(True):
+            type("2")
+            if exists(Pattern("1585834196250.png").similar(0.83)):
+                break
+            else:
+                type("4")
+                type("q")
+                type("r")       
+    type("v")
+    wait(0.5)
+    if targetCropse.exists(Pattern("1585835125332.png").similar(0.83)):
+        type("u")

@@ -1,0 +1,48 @@
+Settings.AutoDetectKeyboardLayout = False
+attackToggle = Region(Region(686,946,87,89))
+targetCropse = Region(Region(1106,566,292,99))
+radar = Region(Region(1671,315,197,44))
+msgError = Region(Region(393,60,467,75))
+def startMoving():
+    if radar.exists(Pattern("1586015971354.png").exact()):
+        keyDown(Key.LEFT)
+        wait(1)
+        keyUp(Key.LEFT)
+        keyDown(Key.UP)
+        wait(1)
+        keyUp(Key.UP)
+    if radar.exists(Pattern("1586016822498.png").exact()):
+        keyDown(Key.LEFT)
+        wait(2)
+        keyUp(Key.LEFT)
+        keyDown(Key.UP)
+        wait(2)
+        keyUp(Key.UP)
+
+def moveAround():
+    keyDown("d")
+    wait(2)
+    keyUp("d")
+    
+
+while(True):
+    if attackToggle.exists(Pattern("1585832753926.png").similar(0.73)):
+        type(Key.TAB)
+        while(True):
+            type("2")
+            if exists(Pattern("1585834196250.png").similar(0.83)):
+                break
+            else:
+                type("4")
+                type("q")
+                type("r")       
+    type("v")
+    wait(0.5)
+    if targetCropse.exists(Pattern("1585835125332.png").similar(0.83)):
+        type("u")
+        wait(5)
+        type("u")
+        if msgError.exists(Pattern("1586017173790.png").similar(0.86)):
+            moveAround()
+    
+
